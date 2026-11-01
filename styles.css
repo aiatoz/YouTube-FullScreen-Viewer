@@ -1,0 +1,48 @@
+/*
+  Only applies while the YouTube player is in fullscreen (.ytp-fullscreen).
+  YouTube sets inline width/height/left/top on the <video>, so we override with !important.
+*/
+
+html.ytfill-crop .html5-video-player.ytp-fullscreen .html5-video-container,
+html.ytfill-stretch .html5-video-player.ytp-fullscreen .html5-video-container {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+html.ytfill-crop .html5-video-player.ytp-fullscreen video.html5-main-video,
+html.ytfill-stretch .html5-video-player.ytp-fullscreen video.html5-main-video {
+  width: 100vw !important;
+  height: 100vh !important;
+  left: 0 !important;
+  top: 0 !important;
+}
+
+/* Crop: fill the screen, keep proportions, trim the overflow */
+html.ytfill-crop .html5-video-player.ytp-fullscreen video.html5-main-video {
+  object-fit: cover !important;
+}
+
+/* Stretch: fill the screen exactly, distort proportions */
+html.ytfill-stretch .html5-video-player.ytp-fullscreen video.html5-main-video {
+  object-fit: fill !important;
+}
+
+/* Small on-screen notice when switching modes with the Z key */
+#ytfill-toast {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2147483647;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font: 500 16px/1.2 Roboto, Arial, sans-serif;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+#ytfill-toast.show {
+  opacity: 1;
+}

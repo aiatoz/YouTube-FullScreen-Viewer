@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Fill Screen",
+  "version": "1.0.0",
+  "description": "Removes black bars in YouTube fullscreen by cropping or stretching the video to fill your screen.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "action": {
+    "default_title": "YouTube Fill Screen",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "css": ["styles.css"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}

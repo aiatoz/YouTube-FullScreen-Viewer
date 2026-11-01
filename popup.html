@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { width: 220px; margin: 0; padding: 14px; font: 14px/1.4 system-ui, sans-serif; }
+    h1 { font-size: 15px; margin: 0 0 10px; }
+    label { display: flex; gap: 8px; align-items: flex-start; padding: 6px 0; cursor: pointer; }
+    small { display: block; color: #666; }
+    p { margin: 10px 0 0; color: #666; font-size: 12px; }
+    kbd { border: 1px solid #ccc; border-radius: 3px; padding: 0 4px; }
+  </style>
+</head>
+<body>
+  <h1>YouTube Fill Screen</h1>
+  <label><input type="radio" name="mode" value="crop">
+    <span>Crop<small>Fills screen, trims edges</small></span></label>
+  <label><input type="radio" name="mode" value="stretch">
+    <span>Stretch<small>Fills screen, slight distortion</small></span></label>
+  <label><input type="radio" name="mode" value="off">
+    <span>Off<small>YouTube's normal view</small></span></label>
+  <p>Tip: press <kbd>Z</kbd> on YouTube to cycle modes.</p>
+  <script src="popup.js"></script>
+</body>
+</html>
